@@ -6,8 +6,8 @@ import SectionHeader from '../components/SectionHeader';
 import PrimaryButton from '../components/PrimaryButton';
 
 const stats = [
-  { label: 'المستخدمون النشطون', value: '128,421' },
-  { label: 'الصفقات المنفذة', value: '9.8M' },
+  { label: 'مستخدم نشط', value: '128,421' },
+  { label: 'صفقة منفذة', value: '9.8M' },
   { label: 'نسبة الفوز', value: '78.4%' },
   { label: 'دقة الإشارات', value: '92.1%' }
 ];
@@ -15,19 +15,19 @@ const stats = [
 const features = [
   {
     title: 'إشارات ذكاء تكيفية',
-    description: 'استشعار لحظي للسوق عبر محركات ذكاء متعددة العوامل.'
+    description: 'نماذج تتعلم لحظيًا لالتقاط الفرص بدقة أعلى.'
   },
   {
     title: 'تحكم ذكي بالمخاطر',
-    description: 'حدود تعرض ديناميكية، توقفات ذكية، وإعادة توازن تلقائية.'
+    description: 'حدود مرنة، وإيقاف ذكي يحمي رأس المال.'
   },
   {
     title: 'تخصيص تلقائي',
-    description: 'توزيع رأس المال عبر استراتيجيات دقيقة التوجيه.'
+    description: 'توجيه رأس المال عبر استراتيجيات دقيقة ومقاسة.'
   },
   {
-    title: 'أتمتة السحب',
-    description: 'جدولة السحوبات مع موافقات مشفرة.'
+    title: 'سحب آلي',
+    description: 'موافقات مشفرة وسحوبات منظمة بثقة.'
   }
 ];
 
@@ -35,22 +35,22 @@ const steps = [
   {
     step: '01',
     title: 'الربط والتحقق',
-    description: 'انضمام آمن مع تحقق ذكي ومستوى أمني عالي.'
+    description: 'بدء سريع مع تحقق أمني مصمم للثقة.'
   },
   {
     step: '02',
     title: 'اختيار الاستراتيجية',
-    description: 'اختر نمط البوت المناسب: سكالبنج، ترند، أو ماكرو.'
+    description: 'اختر أسلوبك: ترند، سكالبنج، أو ماكرو.'
   },
   {
     step: '03',
-    title: 'نشر رأس المال',
-    description: 'الذكاء يوجّه الأموال عبر قنوات محسّنة.'
+    title: 'توزيع رأس المال',
+    description: 'توزيع ذكي يحافظ على التوازن.'
   },
   {
     step: '04',
-    title: 'المراقبة والتطوير',
-    description: 'تقارير تعلم مستمرة وتحكم فوري.'
+    title: 'مراقبة وتحكم',
+    description: 'رؤى فورية مع أدوات تحكم مرنة.'
   }
 ];
 
@@ -58,19 +58,19 @@ const pricing = [
   {
     name: 'ستارتر',
     price: '$39',
-    description: 'أتمتة ذكاء للمبتدئين.',
+    description: 'نقطة انطلاق ذكية للتجربة.',
     perks: ['استراتيجية واحدة', 'تنبيهات فورية', 'تقرير أسبوعي']
   },
   {
     name: 'برو',
     price: '$129',
-    description: 'ذكاء تداول دقيق لمحافظ النمو.',
+    description: 'تحكم أعمق ونمو أسرع.',
     perks: ['5 استراتيجيات', 'تحكم مخاطر', 'دعم أولوية']
   },
   {
     name: 'إيليت',
     price: '$299',
-    description: 'لوحة قيادة ذكاء احترافية.',
+    description: 'قدرات احترافية بلا حدود.',
     perks: ['استراتيجيات غير محدودة', 'تغذية ألفا خاصة', 'فريق كوانت']
   }
 ];
@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     q: 'ما سرعة السحب؟',
-    a: 'التوجيه الآلي للموافقات ينجز السحب خلال دقائق بعد التحقق.'
+    a: 'توجيه آلي للموافقات ينجز السحب خلال دقائق بعد التحقق.'
   },
   {
     q: 'هل يمكن التحكم بالمخاطر يدويًا؟',
@@ -99,7 +99,7 @@ const testimonials = [
   {
     name: 'ديفون لي',
     role: 'مؤسس فينتك',
-    quote: 'أذكى واجهة تداول رأيتها. كل إشارة لها معنى.'
+    quote: 'واجهة تداول ذكية جدًا مع تجربة سلسة ونظيفة.'
   },
   {
     name: 'جوردان باتل',
@@ -112,7 +112,7 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-base text-slate-900">
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-mesh opacity-80" />
+        <div className="absolute inset-0 bg-mesh opacity-90" />
         <div className="absolute -top-40 left-0 h-96 w-96 rounded-full bg-neon-purple/20 blur-[140px]" />
         <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-neon-cyan/20 blur-[160px]" />
         <header className="relative z-10 flex items-center justify-between px-6 py-6 md:px-16">
@@ -122,7 +122,7 @@ const LandingPage = () => {
             </div>
             <div>
               <p className="text-sm uppercase tracking-[0.3em] text-slate-500">NEOALGO AI</p>
-              <p className="text-lg font-semibold">منصة قيادة التداول</p>
+              <p className="text-lg font-semibold">لوحة قيادة التداول الذكي</p>
             </div>
           </div>
           <nav className="hidden md:flex items-center gap-8 text-sm text-slate-600">
@@ -137,8 +137,8 @@ const LandingPage = () => {
           </div>
         </header>
 
-        <section className="relative z-10 px-6 pb-24 pt-10 md:px-16">
-          <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+        <section className="relative z-10 px-6 pb-28 pt-12 md:px-16">
+          <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] items-center">
             <div>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -146,18 +146,18 @@ const LandingPage = () => {
                 transition={{ duration: 0.8 }}
                 className="text-4xl md:text-6xl font-semibold leading-tight"
               >
-                مركز ذكاء التداول
-                <span className="gradient-text"> المصمم للمستقبل.</span>
+                تداول ذكي بواجهة
+                <span className="gradient-text"> مستقبلية وبسيطة.</span>
               </motion.h1>
               <p className="mt-6 text-lg text-slate-600 max-w-xl">
-                NEOALGO AI ينسّق التداول الذاتي، الإشارات التنبؤية، وتوجيه رأس المال عبر لوحة ذكية
-                مصممة للمستثمرين العصريين.
+                منصة NEOALGO AI تجمع بين الإشارات الذكية وإدارة المخاطر والتخصيص الآلي ضمن تجربة
+                نظيفة وسريعة للمستثمرين العصريين.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <PrimaryButton>
                   ابدأ الآن <ArrowRight size={18} />
                 </PrimaryButton>
-                <button className="neon-outline">عرض تجريبي</button>
+                <button className="neon-outline">استعرض المنصة</button>
               </div>
               <div className="mt-10 grid gap-4 sm:grid-cols-2">
                 {stats.map((item) => (
@@ -169,7 +169,7 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="absolute -top-10 right-10 h-32 w-32 rounded-full bg-neon-blue/20 blur-3xl" />
+              <div className="absolute -top-12 right-10 h-32 w-32 rounded-full bg-neon-blue/20 blur-3xl" />
               <GlassCard className="p-8">
                 <div className="flex items-center justify-between">
                   <div>
@@ -186,7 +186,7 @@ const LandingPage = () => {
                     </div>
                   ))}
                 </div>
-                <div className="mt-8 rounded-2xl border border-slate-200 bg-white/60 p-4">
+                <div className="mt-8 rounded-2xl border border-slate-200 bg-white/70 p-4">
                   <p className="text-xs text-slate-500">العائد المتوقع</p>
                   <p className="text-3xl font-semibold text-neon-purple">+18.4%</p>
                   <p className="text-xs text-slate-500">آخر 30 يومًا</p>
@@ -219,8 +219,8 @@ const LandingPage = () => {
 
       <section id="features" className="px-6 py-20 md:px-16">
         <SectionHeader
-          title="ميزات ذكاء مخصصة"
-          subtitle="كل وحدة مضبوطة للسرعة والأمان وذكاء القرار."
+          title="ميزات ذكية بأقل تعقيد"
+          subtitle="كل ما تحتاجه لإدارة تداولك بواجهة نظيفة وحديثة."
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (
@@ -235,7 +235,7 @@ const LandingPage = () => {
       <section className="px-6 py-20 md:px-16 bg-white/70">
         <SectionHeader
           title="كيف تعمل المنصة"
-          subtitle="مصممة للوضوح والسرعة من البداية حتى التنفيذ."
+          subtitle="خطوات بسيطة لبداية قوية وواضحة."
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
