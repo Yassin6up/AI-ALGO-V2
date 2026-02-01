@@ -1,0 +1,158 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum WalletType {
+  INCOME
+  PACKAGE
+}
+
+enum TransactionStatus {
+  PENDING
+  COMPLETED
+  FAILED
+}
+
+model User {
+  id             String   @id @default(cuid())
+  name           String
+  email          String   @unique
+  passwordHash   String
+  phone          String?
+  role           String   @default("user")
+  referralCode   String   @unique
+  referredBy     String?
+  transactionPin String?
+  createdAt      DateTime @default(now())
+
+  wallets         Wallet[]
+  transactions    Transaction[]
+  deposits        Deposit[]
+  withdrawals     Withdrawal[]
+  botActivations  BotActivation[]
+  investments     Investment[]
+  incomeLogs      IncomeLog[]
+  walletAddresses WalletAddress[]
+
+  @@index([referralCode])
+  @@index([createdAt])
+}
+
+model Wallet {
+  id        String     @id @default(cuid())
+  userId    String
+  type      WalletType
+  balance   Decimal    @default(0)
+  createdAt DateTime   @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+model Transaction {
+  id           String             @id @default(cuid())
+  userId       String
+  type         String
+  amount       Decimal
+  status       TransactionStatus @default(PENDING)
+  metadataJson Json?
+  createdAt    DateTime           @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model Deposit {
+  id        String             @id @default(cuid())
+  userId    String
+  amount    Decimal
+  method    String
+  txHash    String?
+  status    TransactionStatus @default(PENDING)
+  createdAt DateTime           @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model Withdrawal {
+  id         String             @id @default(cuid())
+  userId     String
+  amount     Decimal
+  walletType WalletType
+  address    String
+  network    String
+  status     TransactionStatus @default(PENDING)
+  createdAt  DateTime           @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model BotActivation {
+  id        String             @id @default(cuid())
+  userId    String
+  fee       Decimal
+  status    TransactionStatus @default(PENDING)
+  createdAt DateTime           @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model Investment {
+  id        String             @id @default(cuid())
+  userId    String
+  amount    Decimal
+  roi       Decimal @default(0)
+  status    TransactionStatus @default(PENDING)
+  createdAt DateTime           @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model IncomeLog {
+  id           String   @id @default(cuid())
+  userId       String
+  category     String
+  amount       Decimal
+  level        Int?
+  sourceUserId String?
+  createdAt    DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model WalletAddress {
+  id         String   @id @default(cuid())
+  userId     String
+  network    String
+  address    String
+  isVerified Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([createdAt])
+}
