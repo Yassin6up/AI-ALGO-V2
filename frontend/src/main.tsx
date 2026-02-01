@@ -12,9 +12,11 @@ const queryClient = new QueryClient();
 const ThemeWatcher: React.FC = () => {
   const mode = useThemeStore((state) => state.mode);
   React.useEffect(() => {
-    document.documentElement.classList.toggle('light', mode === 'light');
-    document.body.classList.toggle('bg-white', mode === 'light');
+    document.documentElement.classList.toggle('dark', mode === 'dark');
+    document.body.classList.toggle('bg-base', mode === 'light');
+    document.body.classList.toggle('bg-slate-900', mode === 'dark');
     document.body.classList.toggle('text-slate-900', mode === 'light');
+    document.body.classList.toggle('text-white', mode === 'dark');
   }, [mode]);
   return null;
 };

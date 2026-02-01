@@ -23,31 +23,31 @@ const RegisterPage = () => {
 
   return (
     <AuthCard
-      title="Create your command deck"
-      subtitle="Launch your AI trading journey in minutes."
-      footerText="Already have access?"
+      title="أنشئ لوحة قيادتك"
+      subtitle="ابدأ رحلتك بالتداول الذكي خلال دقائق."
+      footerText="لديك حساب بالفعل؟"
       footerLink="/login"
-      footerLabel="Sign in"
+      footerLabel="تسجيل الدخول"
     >
       <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register('name')}
-          placeholder="Full name"
-          className="w-full rounded-2xl bg-black/40 border border-white/10 px-4 py-3 text-sm"
+          placeholder="الاسم الكامل"
+          className="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 text-sm"
         />
         <input
           {...register('email')}
           type="email"
-          placeholder="Email address"
-          className="w-full rounded-2xl bg-black/40 border border-white/10 px-4 py-3 text-sm"
+          placeholder="البريد الإلكتروني"
+          className="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 text-sm"
         />
         <input
           {...register('password')}
           type="password"
-          placeholder="Create password"
-          className="w-full rounded-2xl bg-black/40 border border-white/10 px-4 py-3 text-sm"
+          placeholder="إنشاء كلمة مرور"
+          className="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 text-sm"
         />
-        <PrimaryButton type="submit">Start now</PrimaryButton>
+        <PrimaryButton type="submit">ابدأ الآن</PrimaryButton>
       </form>
     </AuthCard>
   );

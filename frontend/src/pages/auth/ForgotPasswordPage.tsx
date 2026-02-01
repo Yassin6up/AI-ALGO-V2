@@ -21,20 +21,20 @@ const ForgotPasswordPage = () => {
 
   return (
     <AuthCard
-      title="Reset access"
-      subtitle="We'll send a secure reset link to your email."
-      footerText="Remembered your password?"
+      title="استعادة الوصول"
+      subtitle="سوف نرسل رابط استعادة آمن إلى بريدك."
+      footerText="تذكرت كلمة المرور؟"
       footerLink="/login"
-      footerLabel="Back to sign in"
+      footerLabel="العودة لتسجيل الدخول"
     >
       <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register('email')}
           type="email"
-          placeholder="Email address"
-          className="w-full rounded-2xl bg-black/40 border border-white/10 px-4 py-3 text-sm"
+          placeholder="البريد الإلكتروني"
+          className="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 text-sm"
         />
-        <PrimaryButton type="submit">Send reset link</PrimaryButton>
+        <PrimaryButton type="submit">إرسال رابط الاستعادة</PrimaryButton>
       </form>
     </AuthCard>
   );

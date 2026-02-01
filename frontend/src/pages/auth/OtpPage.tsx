@@ -21,19 +21,19 @@ const OtpPage = () => {
 
   return (
     <AuthCard
-      title="Two-factor verification"
-      subtitle="Enter the 6-digit code from your authenticator."
-      footerText="Need a new code?"
+      title="التحقق الثنائي"
+      subtitle="أدخل رمز التحقق المكون من 6 أرقام."
+      footerText="تحتاج رمزًا جديدًا؟"
       footerLink="/login"
-      footerLabel="Back to login"
+      footerLabel="العودة لتسجيل الدخول"
     >
       <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register('otp')}
-          placeholder="Enter OTP"
-          className="w-full rounded-2xl bg-black/40 border border-white/10 px-4 py-3 text-sm tracking-[0.3em] text-center"
+          placeholder="أدخل رمز التحقق"
+          className="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 text-sm tracking-[0.3em] text-center"
         />
-        <PrimaryButton type="submit">Verify</PrimaryButton>
+        <PrimaryButton type="submit">تحقق</PrimaryButton>
       </form>
     </AuthCard>
   );
