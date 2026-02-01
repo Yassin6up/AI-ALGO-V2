@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-base text-white font-sans;
+}
+
+.glass {
+  @apply bg-panel/80 backdrop-blur-xl border border-white/10 shadow-card;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-semibold tracking-tight;
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, #8b5cf6, #22d3ee, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.neon-button {
+  @apply rounded-full px-6 py-3 font-semibold tracking-wide transition-all duration-300;
+  background: linear-gradient(120deg, rgba(139,92,246,0.9), rgba(34,211,238,0.9));
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
+}
+
+.neon-outline {
+  @apply rounded-full px-6 py-3 font-semibold tracking-wide border border-white/20 hover:border-white/60 transition-all duration-300;
+}
+
+.table-glass th {
+  @apply sticky top-0 bg-base/80 backdrop-blur border-b border-white/10 text-left text-xs uppercase tracking-wider;
+}
+
+.table-glass td {
+  @apply border-b border-white/5 text-sm;
+}
