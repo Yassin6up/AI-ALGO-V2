@@ -31,7 +31,7 @@ const OtpPage = () => {
         <input
           {...register('otp')}
           placeholder="أدخل رمز التحقق"
-          className="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 text-sm tracking-[0.3em] text-center"
+          className="input-field tracking-[0.3em] text-center"
         />
         <PrimaryButton type="submit">تحقق</PrimaryButton>
       </form>

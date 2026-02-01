@@ -30,23 +30,9 @@ const RegisterPage = () => {
       footerLabel="تسجيل الدخول"
     >
       <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
-        <input
-          {...register('name')}
-          placeholder="الاسم الكامل"
-          className="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 text-sm"
-        />
-        <input
-          {...register('email')}
-          type="email"
-          placeholder="البريد الإلكتروني"
-          className="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 text-sm"
-        />
-        <input
-          {...register('password')}
-          type="password"
-          placeholder="إنشاء كلمة مرور"
-          className="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 text-sm"
-        />
+        <input {...register('name')} placeholder="الاسم الكامل" className="input-field" />
+        <input {...register('email')} type="email" placeholder="البريد الإلكتروني" className="input-field" />
+        <input {...register('password')} type="password" placeholder="إنشاء كلمة مرور" className="input-field" />
         <PrimaryButton type="submit">ابدأ الآن</PrimaryButton>
       </form>
     </AuthCard>

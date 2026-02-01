@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Sparkles, Zap } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import GlassCard from '../components/GlassCard';
 import SectionHeader from '../components/SectionHeader';
 import PrimaryButton from '../components/PrimaryButton';
+import Threads from '../components/Threads';
 
 const stats = [
   { label: 'مستخدم نشط', value: '128,421' },
@@ -109,31 +111,58 @@ const testimonials = [
 ];
 
 const LandingPage = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 24);
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-base text-slate-900">
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-mesh opacity-90" />
+        <Threads
+          color={[0.2, 0.55, 0.95]}
+          amplitude={1}
+          distance={0}
+          enableMouseInteraction
+          className="top-0"
+        />
         <div className="absolute -top-40 left-0 h-96 w-96 rounded-full bg-neon-purple/20 blur-[140px]" />
         <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-neon-cyan/20 blur-[160px]" />
-        <header className="relative z-10 flex items-center justify-between px-6 py-6 md:px-16">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-2xl bg-white/80 border border-slate-200 flex items-center justify-center">
-              <Sparkles className="text-neon-cyan" />
+        <header className="sticky top-4 z-20 px-6 md:px-16">
+          <div
+            className={`mx-auto flex w-full max-w-6xl items-center justify-between rounded-3xl px-4 py-4 transition-all ${
+              isScrolled
+                ? 'bg-white/90 shadow-card border border-slate-200'
+                : 'bg-transparent'
+            }`}
+            style={{ width: isScrolled ? '80%' : '100%' }}
+          >
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-2xl bg-white/90 border border-slate-200 flex items-center justify-center">
+                <Sparkles className="text-neon-cyan" />
+              </div>
+              <div>
+                <p className="text-sm uppercase tracking-[0.3em] text-slate-500">NEOALGO AI</p>
+                <p className="text-lg font-semibold">لوحة قيادة التداول الذكي</p>
+              </div>
             </div>
-            <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-slate-500">NEOALGO AI</p>
-              <p className="text-lg font-semibold">لوحة قيادة التداول الذكي</p>
+            <nav className="hidden md:flex items-center gap-8 text-sm text-slate-600">
+              <a href="#features" className="hover:text-slate-900">الميزات</a>
+              <a href="#pricing" className="hover:text-slate-900">الأسعار</a>
+              <a href="#security" className="hover:text-slate-900">الأمان</a>
+              <a href="#faq" className="hover:text-slate-900">الأسئلة</a>
+            </nav>
+            <div className="flex items-center gap-3">
+              <Link to="/login" className="neon-outline text-sm">تسجيل الدخول</Link>
+              <Link to="/register" className="neon-button text-sm">ابدأ الآن</Link>
             </div>
-          </div>
-          <nav className="hidden md:flex items-center gap-8 text-sm text-slate-600">
-            <a href="#features" className="hover:text-slate-900">الميزات</a>
-            <a href="#pricing" className="hover:text-slate-900">الأسعار</a>
-            <a href="#security" className="hover:text-slate-900">الأمان</a>
-            <a href="#faq" className="hover:text-slate-900">الأسئلة</a>
-          </nav>
-          <div className="flex items-center gap-3">
-            <Link to="/login" className="neon-outline text-sm">تسجيل الدخول</Link>
-            <Link to="/register" className="neon-button text-sm">ابدأ الآن</Link>
           </div>
         </header>
 

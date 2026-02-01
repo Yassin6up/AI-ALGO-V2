@@ -30,18 +30,8 @@ const LoginPage = () => {
       footerLabel="إنشاء حساب"
     >
       <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
-        <input
-          {...register('email')}
-          type="email"
-          placeholder="البريد الإلكتروني"
-          className="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 text-sm"
-        />
-        <input
-          {...register('password')}
-          type="password"
-          placeholder="كلمة المرور"
-          className="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 text-sm"
-        />
+        <input {...register('email')} type="email" placeholder="البريد الإلكتروني" className="input-field" />
+        <input {...register('password')} type="password" placeholder="كلمة المرور" className="input-field" />
         <div className="flex items-center justify-between text-xs text-slate-500">
           <span>الحماية الذكية مفعّلة</span>
           <Link to="/forgot-password" className="text-neon-cyan">

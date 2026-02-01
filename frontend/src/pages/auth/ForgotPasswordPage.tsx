@@ -28,12 +28,7 @@ const ForgotPasswordPage = () => {
       footerLabel="العودة لتسجيل الدخول"
     >
       <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
-        <input
-          {...register('email')}
-          type="email"
-          placeholder="البريد الإلكتروني"
-          className="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 text-sm"
-        />
+        <input {...register('email')} type="email" placeholder="البريد الإلكتروني" className="input-field" />
         <PrimaryButton type="submit">إرسال رابط الاستعادة</PrimaryButton>
       </form>
     </AuthCard>
