@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-base text-slate-900 font-sans;
+}
+
+.glass {
+  @apply bg-panel/80 backdrop-blur-xl border border-slate-200/60 shadow-card;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-semibold tracking-tight text-slate-900;
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, #7c3aed, #2563eb, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.neon-button {
+  @apply rounded-full px-6 py-3 font-semibold tracking-wide transition-all duration-300 text-white;
+  background: linear-gradient(120deg, rgba(99, 102, 241, 0.95), rgba(14, 165, 233, 0.95));
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.25);
+}
+
+.neon-outline {
+  @apply rounded-full px-6 py-3 font-semibold tracking-wide border border-slate-300 hover:border-slate-500 transition-all duration-300 text-slate-700;
+}
+
+.table-glass th {
+  @apply sticky top-0 bg-base/80 backdrop-blur border-b border-slate-200 text-right text-xs uppercase tracking-wider text-slate-600;
+}
+
+.table-glass td {
+  @apply border-b border-slate-100 text-sm text-slate-700;
+}
+
+.input-field {
+  @apply w-full rounded-2xl bg-white/90 border border-slate-200 px-4 py-3 text-sm shadow-sm focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-200;
+}
